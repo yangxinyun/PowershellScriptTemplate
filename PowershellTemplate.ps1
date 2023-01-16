@@ -56,8 +56,7 @@ Function <FunctionName> {
       <code goes here>
     }
     Catch {
-      Write-Host -BackgroundColor Red "Error: $($_.Exception)"
-      Break
+      $PSCmdlet.ThrowTerminatingError($PSItem) #Give a better source of exception origin
     }
   }
   End {
