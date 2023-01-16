@@ -32,8 +32,7 @@ Function <FunctionName> {
       <code goes here>
     }
     Catch {
-      Write-Host -BackgroundColor Red "Error: $($_.Exception)"
-      Break
+      $PScmdlet.ThrowTerminatingError($PSItem)
     }
   }
   End {
